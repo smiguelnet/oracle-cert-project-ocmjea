@@ -1,0 +1,74 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<title>SCEA - Part II. Candidate: Sergio B. Miguel (PROMETRIC ID: ********* - Candidate ID: SUN******)</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	</link>
+</head>
+
+<body>
+
+	<h1>Candidate Information</h1>
+
+	<table>
+		<tr>
+			<td class="alignRight widthLabel">Name:</td>
+			<td>Sergio Barriviera Miguel</td>
+		</tr>
+		<tr>
+			<td class="alignRight">Prometric ID:</td>
+			<td>*********</td>
+		</tr>
+		<tr>
+			<td class="alignRight">Candidate ID:</td>
+			<td>SUN******</td>
+		</tr>
+	</table>
+
+	<div><a href="index.html">[ back ]</a></div>
+
+	<h1>Component Diagram</h1>
+	<p>After the diagram, there are some notes/explanation.</p>
+
+	<div><img src="Component.png" /></div>
+
+	<h1>Notes/Explanation</h1>
+	<p>Basically, the same comments present in the Class Diagram.</p>
+
+	<table>
+		<tr>
+			<td>
+				<ol>
+					<li>Service Components (ComponentCatalogService, HouseDesignService and ScheduleConsultationService)
+						are EJBs responsible to encapsulate business logic application;</li>
+
+					<li>HouseDesignDAO and ScheduleConsultationDAO are Stateless Session Bean that implements just
+						Local Interfaces in order to get advantage of transaction control and dependency injection;</li>
+
+					<li>FoundationDAO, RoofDAO and WallDAO are simple classes created by the Factory Method.
+
+						This enables you to introduce new house components and respective DAOs without modifying the
+						code, use and improve the extensibility.
+
+						In order to create a new type of house component just add a new entity that extends abstract
+						class ComponentCatalog, a new
+						DAO class that implements BaseDAO and a new class that implements DAOFactoty.</li>
+
+					<li>CompleteHouseDesignHelper acts as a ViewHelper in order to render the House in the presentation
+						tier;</li>
+
+					<li>ComponentCatalogAdapter and HouseDesignAdapter acts as a Adapter to access the set of
+						WebServices and external resources;</li>
+
+				</ol>
+			</td>
+		</tr>
+	</table>
+
+	<div><a href="index.html">[ back ]</a></div>
+
+</body>
+
+</html>
